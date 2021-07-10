@@ -75,6 +75,10 @@
 #define dbmsghandle(h) dbmsghandle((DBMSGHANDLE_PROC) h)
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* cf getopt(3) */
 extern char *optarg;
 extern int optind;
@@ -96,5 +100,9 @@ int syb_err_handler(DBPROCESS * dbproc, int severity, int dberr, int oserr, char
 RETCODE sql_cmd(DBPROCESS *dbproc);
 RETCODE sql_rewind(void);
 RETCODE sql_reopen(const char *fn);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
